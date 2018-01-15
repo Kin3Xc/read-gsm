@@ -81,13 +81,13 @@
                     console.log(lines[i]);
                     var words=lines[i].split(",");
                     console.log(words);
-                    if ((words[0]!="")&&(words[1]!=""))
+                    if ((words[1]!="")&&(words[2]!=""))
                     {
                         marker=new google.maps.Marker({
-                              position:new google.maps.LatLng(words[0],words[1]),
+                              position:new google.maps.LatLng(words[1],words[2]),
                               });
                         marker.setMap(map);
-                        map.setCenter(new google.maps.LatLng(words[0],words[1]));
+                        map.setCenter(new google.maps.LatLng(words[1],words[2]));
                         document.getElementById('time').innerHTML=words[0] || "";
                         document.getElementById('lat').innerHTML=words[1] || "";
                         document.getElementById('long').innerHTML=words[2] || "";
