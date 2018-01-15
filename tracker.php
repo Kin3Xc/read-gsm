@@ -107,10 +107,11 @@
             margin: 0;
             font-size: 16px;
             font-family: Arial;
+            background: #ecf0f1;
         }
         #superior{
-            background: #ecf0f1;
             border: none;
+            padding: 10px;
         }
         table{
             border: none;
@@ -126,7 +127,7 @@
 
         <div>
             <center><br />
-                <b> SIM908 GPS position DEMO </b><br /><br />
+                <b> SIM908 GPS position DEMO </b><hr><br /><br />
                 <div id="superior" style="width:800px;">
                     <table style="width:100%">
                         <tr>
