@@ -67,7 +67,8 @@
               zoom:15,
               mapTypeId:google.maps.MapTypeId.ROADMAP
               };
-            setInterval('mark()',5000);
+            // setInterval('mark()',10000);
+            mark();
         }
 
         function mark()
@@ -83,10 +84,10 @@
                     if ((words[0]!="")&&(words[1]!=""))
                     {
                         marker=new google.maps.Marker({
-                              position:new google.maps.LatLng(words[1],words[2]),
+                              position:new google.maps.LatLng(words[0],words[1]),
                               });
                         marker.setMap(map);
-                        map.setCenter(new google.maps.LatLng(words[1],words[2]));
+                        map.setCenter(new google.maps.LatLng(words[0],words[1]));
                         document.getElementById('time').innerHTML=words[0] || "";
                         document.getElementById('lat').innerHTML=words[1] || "";
                         document.getElementById('long').innerHTML=words[2] || "";
