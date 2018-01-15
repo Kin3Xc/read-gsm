@@ -11,6 +11,12 @@ app.get('/', ( req, res )=>{
 	res.send("Hola, estas conectado al servidor de pruebas");
 });
 
+app.get('/dat', ( req, res )=>{
+	console.log(req.params.dat)
+	res.status(200);
+	res.json({mensaje:"Datos recibidos", data:req.params.dat});
+});
+
 app.post('/', ( req, res )=>{
 	console.log(req.body);
 	res.status(200);
