@@ -77,7 +77,7 @@
             var file = "file.txt";
             $.get(file, function(txt) { 
                 var lines = txt.split("\n");
-                for (var i=0;i<lines.length;i++){
+                for (var i=0;i<lines.length-1;i++){
                     console.log(lines[i]);
                     words=lines[i].split(",");
                     console.log(words);
