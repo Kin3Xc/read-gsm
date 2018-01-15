@@ -14,7 +14,7 @@ else
 $stringData = $_GET['dat'] ;
 fwrite($fh, "\n");
 fwrite($fh, strftime('%c'));
-fwrite($fh, " :");
+fwrite($fh, ",");
 fwrite($fh, $stringData);
 // echo "Hello, " . $_GET['dat'];
 fclose($fh);
