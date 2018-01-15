@@ -1,0 +1,29 @@
+{
+  "name": "read-gsm",
+  "version": "1.0.0",
+  "description": "Api for managment data to devices GSM protocol",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kin3Xc/read-gsm.git"
+  },
+  "keywords": [
+    "gsm",
+    "js",
+    "node",
+    "mongodb"
+  ],
+  "author": "Elkin Urango",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kin3Xc/read-gsm/issues"
+  },
+  "homepage": "https://github.com/Kin3Xc/read-gsm#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
