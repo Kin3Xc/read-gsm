@@ -79,16 +79,17 @@
                 for (var i=0;i<lines.length;i++){
                     console.log(lines[i]);
                     var words=lines[i].split(",");
-                    if ((words[0]!="")&&(words[1]!=""))
+                    console.log(words);
+                    if ((words[1]!="")&&(words[2]!=""))
                     {
                         marker=new google.maps.Marker({
-                              position:new google.maps.LatLng(words[0],words[1]),
+                              position:new google.maps.LatLng(words[1],words[2]),
                               });
                         marker.setMap(map);
-                        map.setCenter(new google.maps.LatLng(words[0],words[1]));
-                        document.getElementById('sat').innerHTML=words[3];
-                        document.getElementById('speed').innerHTML=words[4];
-                        document.getElementById('course').innerHTML=words[5];
+                        map.setCenter(new google.maps.LatLng(words[1],words[2]));
+                        document.getElementById('time').innerHTML=words[0];
+                        document.getElementById('lat').innerHTML=words[1];
+                        document.getElementById('long').innerHTML=words[2];
                     }
                 }
                 marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -99,7 +100,7 @@
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 </head>
-
+<!-- '. date("Y M d - H:m") .' -->
 <body>
     <?php
         echo '    
@@ -113,15 +114,13 @@
                     <table style="width:100%">
                         <tr>
                             <td>Time</td>
-                            <td>Satellites</td>
-                            <td>Speed OTG</td>
-                            <td>Course</td>
+                            <td>Latitude</td>
+                            <td>Longitude</td>
                         </tr>
                         <tr>
-                            <td id="time">'. date("Y M d - H:m") .'</td>
-                            <td id="sat"></td>
-                            <td id="speed"></td>
-                            <td id="course"></td>
+                            <td id="time"></td>
+                            <td id="lat"></td>
+                            <td id="lon"></td>
                         </tr>
                 </table>
                 </div>
