@@ -12,7 +12,7 @@ echo "You did not enter a name.";
 else
 {
 $stringData = $_GET['dat'] ;
-fwrite($fh, "\n");
+// fwrite($fh, "\n");
 fwrite($fh, strftime('%c'));
 fwrite($fh, ",");
 fwrite($fh, $stringData);
