@@ -107,7 +107,7 @@
             padding: 0;
             margin: 0;
             font-size: 16px;
-            font-family: Arial;
+            font-family: Arial, Helvetica, sans-serif;
             background: #ecf0f1;
         }
         #superior{
