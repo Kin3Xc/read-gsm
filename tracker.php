@@ -50,7 +50,7 @@
 
     <!-- IMPORTANT: change the API v3 key -->
 
-    <script src="http://maps.googleapis.com/maps/api/js?key=your_key&sensor=false"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBpoCsCMwRop9Rc-Dj40ag74Blhn0q2P8A&sensor=false"></script>
 
     <!-- Initialize Map and markers -->
 
