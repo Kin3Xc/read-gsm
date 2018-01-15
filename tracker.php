@@ -67,8 +67,7 @@
               zoom:15,
               mapTypeId:google.maps.MapTypeId.ROADMAP
               };
-            // setInterval('mark()',5000);
-            mark();
+            setInterval('mark()',5000);
         }
         var words;
         function mark()
