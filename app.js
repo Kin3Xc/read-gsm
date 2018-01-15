@@ -11,8 +11,9 @@ app.get('/', ( req, res )=>{
 	res.send("Hola, estas conectado al servidor de pruebas");
 });
 
-app.get('/dat', ( req, res )=>{
-	console.log(req.params.dat)
+app.get('/:latitude/:longitude', ( req, res )=>{
+	console.log(req.params.latitude);
+	console.log(req.params.longitude);
 	res.status(200);
 	res.json({mensaje:"Datos recibidos", data:req.params.dat});
 });
