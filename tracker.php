@@ -67,9 +67,9 @@
               zoom:15,
               mapTypeId:google.maps.MapTypeId.ROADMAP
               };
-            setInterval('mark()',10000);
+            setInterval('mark()',5000);
         }
-
+        var words;
         function mark()
         {
             map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -78,7 +78,7 @@
                 var lines = txt.split("\n");
                 for (var i=0;i<lines.length;i++){
                     console.log(lines[i]);
-                    var words=lines[i].split(",");
+                    words=lines[i].split(",");
                     console.log(words);
                     if ((words[1]!="")&&(words[2]!=""))
                     {
