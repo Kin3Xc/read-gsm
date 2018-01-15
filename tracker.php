@@ -99,6 +99,23 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            font-family: Arial;
+        }
+        #superior{
+            background: #ecf0f1;
+            border: none;
+        }
+        table{
+            border: none;
+        }
+    </style>
 </head>
 <!-- '. date("Y M d - H:m") .' -->
 <body>
@@ -110,7 +127,7 @@
         <div>
             <center><br />
                 <b> SIM908 GPS position DEMO </b><br /><br />
-                <div id="superior" style="width:800px;border:1px solid">
+                <div id="superior" style="width:800px;">
                     <table style="width:100%">
                         <tr>
                             <td>Time</td>
@@ -125,7 +142,7 @@
                 </table>
                 </div>
                 <br /><br />
-                <div id="googleMap" style="width:800px;height:700px;"></div>
+                <div id="googleMap" style="width:100%;height:700px;"></div>
             </center>
         </div>';
     ?>
