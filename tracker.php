@@ -1,8 +1,8 @@
 <?php
 
-    if (!empty($_GET['latitude']) && !empty($_GET['longitude']) &&
-        !empty($_GET['time']) && !empty($_GET['satellites']) &&
-        !empty($_GET['speedOTG']) && !empty($_GET['course'])) {
+    // if (!empty($_GET['latitude']) && !empty($_GET['longitude']) &&
+    //     !empty($_GET['time']) && !empty($_GET['satellites']) &&
+    //     !empty($_GET['speedOTG']) && !empty($_GET['course'])) {
 
         function getParameter($par, $default = null){
             if (isset($_GET[$par]) && strlen($_GET[$par])) return $_GET[$par];
@@ -33,7 +33,7 @@
             echo "\n\t Error saving Data\n";
         else echo "\n\t Data Save\n";
     }
-    else {
+    // else {
 
 ?>
 
@@ -79,6 +79,7 @@
                 for (var i=0;i<lines.length;i++){
                     console.log(lines[i]);
                     var words=lines[i].split(",");
+                    console.log(words);
                     if ((words[0]!="")&&(words[1]!=""))
                     {
                         marker=new google.maps.Marker({
@@ -99,7 +100,7 @@
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 </head>
-
+<!-- '. date("Y M d - H:m") .' -->
 <body>
     <?php
         echo '    
@@ -113,15 +114,13 @@
                     <table style="width:100%">
                         <tr>
                             <td>Time</td>
-                            <td>Satellites</td>
-                            <td>Speed OTG</td>
-                            <td>Course</td>
+                            <td>Latitude</td>
+                            <td>Longitude</td>
                         </tr>
                         <tr>
-                            <td id="time">'. date("Y M d - H:m") .'</td>
-                            <td id="sat"></td>
-                            <td id="speed"></td>
-                            <td id="course"></td>
+                            <td id="time">'.$time.'</td>
+                            <td id="lat">'.$lat.'</td>
+                            <td id="lon">'.$lon.'</td>
                         </tr>
                 </table>
                 </div>
@@ -133,5 +132,5 @@
 </body>
 </html>
 
-<?php } ?>
+<?php  ?>
   
