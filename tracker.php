@@ -87,9 +87,9 @@
                               });
                         marker.setMap(map);
                         map.setCenter(new google.maps.LatLng(words[1],words[2]));
-                        document.getElementById('time').innerHTML=words[0] || "";
-                        document.getElementById('lat').innerHTML=words[1] || "";
-                        document.getElementById('lon').innerHTML=words[2] || "";
+                        document.getElementById('time').innerHTML=words[0];
+                        document.getElementById('lat').innerHTML=words[1];
+                        document.getElementById('lon').innerHTML=words[2];
                     }
                 }
                 marker.setAnimation(google.maps.Animation.BOUNCE);
