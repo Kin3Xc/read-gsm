@@ -15,7 +15,7 @@ app.get('/:latitude/:longitude', ( req, res )=>{
 	console.log(req.params.latitude);
 	console.log(req.params.longitude);
 	res.status(200);
-	res.json({mensaje:"Datos recibidos", data:req.params.dat});
+	res.json({ mensaje:"Datos recibidos", latitude:req.params.latitude, longitude: req.params.longitude });
 });
 
 app.post('/', ( req, res )=>{
