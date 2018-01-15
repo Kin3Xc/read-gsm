@@ -11,7 +11,7 @@
             else return $default;
         }
 
-        $file = 'gps.txt';
+        $file = 'file.txt';
         $lat = getParameter("latitude");
         $lon = getParameter("longitude");
         $time = getParameter("time");
@@ -44,7 +44,7 @@
 
     <!-- Load Jquery -->
 
-    <script language="JavaScript" type="text/javascript" src="jquery-1.10.1.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
 
     <!-- Load Google Maps Api -->
 
@@ -73,7 +73,7 @@
         function mark()
         {
             map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-            var file = "gps.txt";
+            var file = "file.txt";
             $.get(file, function(txt) { 
                 var lines = txt.split("\n");
                 for (var i=0;i<lines.length;i++){
