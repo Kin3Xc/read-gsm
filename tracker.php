@@ -112,6 +112,7 @@
         #superior{
             border: none;
             padding: 10px;
+            background-color: #fff;
         }
         table{
             border: none;
