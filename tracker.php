@@ -117,6 +117,9 @@
         table{
             border: none;
         }
+        hr{
+            color: #666;
+        }
     </style>
 </head>
 <!-- '. date("Y M d - H:m") .' -->
