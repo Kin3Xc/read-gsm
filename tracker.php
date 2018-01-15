@@ -80,16 +80,16 @@
                     console.log(lines[i]);
                     var words=lines[i].split(",");
                     console.log(words);
-                    if ((words[1]!="")&&(words[2]!=""))
+                    if ((words[0]!="")&&(words[1]!=""))
                     {
                         marker=new google.maps.Marker({
                               position:new google.maps.LatLng(words[1],words[2]),
                               });
                         marker.setMap(map);
                         map.setCenter(new google.maps.LatLng(words[1],words[2]));
-                        document.getElementById('time').innerHTML=words[0];
-                        document.getElementById('lat').innerHTML=words[1];
-                        document.getElementById('long').innerHTML=words[2];
+                        document.getElementById('time').innerHTML=words[0] || "";
+                        document.getElementById('lat').innerHTML=words[1] || "";
+                        document.getElementById('long').innerHTML=words[2] || "";
                     }
                 }
                 marker.setAnimation(google.maps.Animation.BOUNCE);
