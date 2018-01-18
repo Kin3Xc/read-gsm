@@ -68,29 +68,59 @@
               mapTypeId:google.maps.MapTypeId.ROADMAP
               };
             mark();
-            setInterval('mark()',10000);
+            setInterval('mark()',120000);
         }
         var words;
         function mark()
         {
+
+            // posisiones
+            // 0: time
+            // 1: latitude
+            // 2: N or S
+            // 3: longitude
+            // 4: E o W
+
             map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
             var file = "file.txt";
             $.get(file, function(txt) { 
                 var lines = txt.split("\n");
-                for (var i=0;i<lines.length-1;i++){
-                    console.log(lines[i]);
+                console.log(lines.length);
+                for (var i=0;i<lines.length;i++){
+                    console.log(lines);
                     words=lines[i].split(",");
-                    console.log(words);
-                    if ((words[1]!="")&&(words[2]!=""))
-                    {
+                    if ((words[1]!="")&&(words[2]!="")){
+
+                        var gradoLatitude = words[1].substr(0, 2);
+                        var gradoLongitude = words[3].substr(0, 3);
+                        console.log(gradoLatitude, gradoLongitude);
+
+                        var latitude = words[1].substr(2);
+                        var longitude = words[3].substr(3);
+                        
+                        var resulLat = parseFloat(latitude/60) + parseInt(gradoLatitude);
+                        var resulLon = parseFloat(longitude/60) + parseInt(gradoLongitude);
+
+                        if(words[2] == "S"){
+                            // latitude negativa
+                            resulLat = '-'+resulLat;
+                            resulLat = parseFloat(resulLat);
+                        }
+                        if(words[4] == "W"){
+                            // longitude negativa
+                            resulLon = '-'+resulLon;
+                            resulLon = parseFloat(resulLon);
+                        }
+                        console.log(resulLat, resulLon);
+
                         marker=new google.maps.Marker({
-                              position:new google.maps.LatLng(words[1],words[2]),
+                              position:new google.maps.LatLng(resulLat,resulLon),
                               });
                         marker.setMap(map);
-                        map.setCenter(new google.maps.LatLng(words[1],words[2]));
+                        map.setCenter(new google.maps.LatLng(resulLat,resulLon));
                         document.getElementById('time').innerHTML=words[0];
-                        document.getElementById('lat').innerHTML=words[1];
-                        document.getElementById('lon').innerHTML=words[2];
+                        document.getElementById('lat').innerHTML=resulLat;
+                        document.getElementById('lon').innerHTML=resulLon;
                     }
                 }
                 marker.setAnimation(google.maps.Animation.BOUNCE);
